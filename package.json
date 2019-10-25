@@ -1,6 +1,6 @@
 {
   "name": "hubbot",
-  "version": "1.0.0",
+  "version": "0.0.2",
   "private": true,
   "author": "Robert Steilberg <rsteilberg@esri.com>",
   "description": "One bot to rule them all.",
