@@ -74,6 +74,7 @@ pipeline {
       steps {
         script {
           kubecfg{} // creates active clusters' kubeconfig and downloads certs for them in the workspace kubeconfig
+          env.NAMESPACE = 'dev'
           deployApp { // sets kubecontext and deploys
             NAMESPACE = 'dev' // you cannot send the value from env var while calling a shared lib function
           }
