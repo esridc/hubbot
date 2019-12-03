@@ -23,8 +23,6 @@ spec:
     spec:
       containers:
         - env:
-            - name: NODE_ENV
-              value: dev
             - name: HUBOT_SLACK_TOKEN
               valueFrom:
                 secretKeyRef:
@@ -35,7 +33,7 @@ spec:
             - name: HUBOT_DOMAIN_ME_SFW
               value: YES
             - name: HUBOT_GOOGLE_IMAGES_HEAR
-              value: "true"
+              value: true
             - name: HUBOT_GOOGLE_CSE_ID
               valueFrom:
                 secretKeyRef:
