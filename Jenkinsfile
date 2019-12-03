@@ -4,6 +4,8 @@ pipeline {
   agent any
   environment {
     ECR = '223221345407.dkr.ecr.us-east-1.amazonaws.com'
+    KUBECONFIG = './.kube/config' // kube config is set in the workspace so all the containers can use it
+    KUBECFG = credentials('KUBECFG')
   }
   options {
     timeout(time: 30, unit: 'MINUTES')
@@ -13,6 +15,21 @@ pipeline {
       when { anyOf { branch 'master' } }
       steps {
         sh "echo hi"
+      }
+    }
+    stage('create environment variables') {
+      agent {
+        dockerfile {
+          reuseNode true
+          dir 'images/nodejs'
+        }
+      }
+      steps {
+        script {
+            env.DOMAIN = 'dev.hub.geocloud.com'
+        }
+        sh 'echo DOMAIN = $DOMAIN'
+        sh 'printenv'
       }
     }
     stage('build image') {
