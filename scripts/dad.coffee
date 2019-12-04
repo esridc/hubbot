@@ -22,3 +22,7 @@ module.exports = (robot) ->
               msg.send response.attachments[0].fallback
             else
               msg.send "roob was here"
+
+module.exports = (robot) ->
+  robot.hear /test/i, (msg) ->
+    msg.send "i now have a jenkins woohoo!"
