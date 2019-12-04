@@ -61,8 +61,6 @@ spec:
             secretKeyRef:
               key: key
               name: io-aws
-      terminationMessagePath: /dev/termination-log
-      terminationMessagePolicy: File
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       schedulerName: default-scheduler
