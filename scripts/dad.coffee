@@ -25,4 +25,4 @@ module.exports = (robot) ->
 
 module.exports = (robot) ->
   robot.hear /wallet/i, (msg) ->
-    msg.send "please send all your crypto to 1BvBMSEYstWetqTFn5Au4m4GFg7xJaNVN2 to fund rob's student loan deb"
+    msg.send "please send all your crypto to 1BvBMSEYstWetqTFn5Au4m4GFg7xJaNVN2 to fund rob's student loan debt"
