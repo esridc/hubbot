@@ -22,7 +22,3 @@ module.exports = (robot) ->
               msg.send response.attachments[0].fallback
             else
               msg.send "roob was here"
-
-module.exports = (robot) ->
-  robot.hear /wallet/i, (msg) ->
-    msg.send "please send all your crypto to 1BvBMSEYstWetqTFn5Au4m4GFg7xJaNVN2 to fund rob's student loan debt"
