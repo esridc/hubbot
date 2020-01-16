@@ -1,6 +1,6 @@
 module.exports = (robot) ->
 
-  robot.hear /wrangling/i, (msg) ->
+  robot.hear /wranglin(g*)/i, (msg) ->
     num = Math.floor(Math.random() * 5)
     result = switch num
       when 0 then "http://giphygifs.s3.amazonaws.com/media/CbY83hpLkcrZe/giphy.gif"
