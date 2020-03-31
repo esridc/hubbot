@@ -13,6 +13,7 @@ module.exports = (robot) ->
 
   robot.hear /tester/i, (msg) ->
     num = Math.floor(Math.random() * 11)
+    v = Math.floor(Math.random() * 10000)
     result = switch num
       when 0 then "https://media.giphy.com/media/629l2uUvy0uyc/giphy.gif"
       when 1 then "https://media.giphy.com/media/2EibPB1gfjHy0/giphy.gif"
@@ -25,4 +26,4 @@ module.exports = (robot) ->
       when 8 then "https://media.giphy.com/media/g7GKcSzwQfugw/giphy.gif"
       when 9 then "https://media.giphy.com/media/lgcUUCXgC8mEo/giphy.gif"
       when 10 then "https://media.giphy.com/media/4SoPtOQAOANMs/giphy.gif"
-    msg.send(result)
+    msg.send(result + "?v=" + v)
